@@ -1,13 +1,19 @@
 import justpy as jp
 from definition import Definition
+from webapp.layout import DefaultLayout
+from webapp.page import Page
 
-class Dictionary:
+
+
+class Dictionary(Page):
     path = '/dictionary'
 
     @classmethod
     def serve(cls, req):
         wp = jp.QuasarPage(tailwind=True)
-        main = jp.Div(a=wp, classes="bg-gray-200 h-screen w-screen")
+        lay = DefaultLayout(a=wp)
+        container = jp.QPageContainer(a=lay)
+        main = jp.Div(a=container, classes="bg-gray-200 h-screen w-screen")
         jp.Div(a=main, text='Instant English Dictionary', classes='text-3xl m-3 w-screen')
         jp.Div(a=main, text='Get the definition of any English word as you type', classes='text-lg m-3')
         input_div = jp.Div(a=main, classes='grid grid-cols-2')
