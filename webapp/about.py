@@ -5,19 +5,16 @@ class About:
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
         main = jp.Div(a=wp, classes="bg-gray-200 h-screen w-screen")
-        jp.Div(a=main, text='This is the about page', classes='text-3xl m-3 text-align-center w-screen')
-        jp.Div(a=main, text='''Lorem ipsum dolor sit amet, consectetur adipiscing 
-        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-        anim id est laborum.
+        jp.Div(a=main, text='Instant Dictionary Web App', classes='text-3xl m-3 w-screen')
+        jp.Div(a=main, text='''A web app that lets users type in a term in a 
+        text box and returns the English definition
+        of that term instantly as soon as the user has finished typing.
+        The web app consists of a website with a navigation menu, a Home, 
+        Dictionary, and About page.
         ''', classes='text-lg m-2')
         return wp
 
-jp.Route(About.path, About.serve)
-jp.justpy()
+
 
 
 
