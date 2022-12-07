@@ -1,10 +1,16 @@
 import justpy as jp
+from webapp.layout import DefaultLayout
+from webapp.page import Page
 
-class About:
+
+
+class About(Page):
     path = '/about'
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
-        main = jp.Div(a=wp, classes="bg-gray-200 h-screen w-screen")
+        lay = DefaultLayout(a=wp)
+        container = jp.QPageContainer(a=lay)
+        main = jp.Div(a=container, classes="bg-gray-200 h-screen w-screen")
         jp.Div(a=main, text='Instant Dictionary Web App', classes='text-3xl m-3 w-screen')
         jp.Div(a=main, text='''A web app that lets users type in a term in a 
         text box and returns the English definition
